@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #080808;
+    --foreground: #ffffff;
+    --aegix-black: #080808;
+    --aegix-charcoal: #151515;
+    --aegix-orange: #FF6A00;
+    --aegix-amber: #FF9D24;
+    --aegix-yellow: #FFD166;
+    --aegix-gray: #A0A0A0;
+    --navy-base: #0F172A;
+    --safety-orange: #F97316;
+    --secure-green: #10B981;
+    --danger-red: #EF4444;
+  }
+
+  html, body {
+    background-color: #080808;
+    color: #ffffff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  ::selection {
+    background-color: #FF6A00;
+    color: #080808;
+  }
+}
+
+/* Custom glow utilities */
+.glow-orange {
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.45);
+}
+
+.glow-orange-subtle {
+  box-shadow: 0 0 15px rgba(255, 106, 0, 0.25);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.6);
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(18, 18, 18, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-badge {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Circular spinning text animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Pulse subtle */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Futuristic Scanline Laser Sweep */
+@keyframes scanline-sweep {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+.animate-scanline {
+  animation: scanline-sweep 4.5s ease-in-out infinite;
+}
+
+/* Soft floating breathing */
+@keyframes float-breathing {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float-breathing 5s ease-in-out infinite;
+}
+
+/* Very gentle, slow, low-amplitude micro float for button */
+@keyframes slow-micro-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-slow-micro-float {
+  animation: slow-micro-float 4.5s ease-in-out infinite;
+}
